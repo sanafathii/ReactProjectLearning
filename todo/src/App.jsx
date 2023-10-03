@@ -20,9 +20,18 @@ function App() {
 
     setTodos(updatedTodos);
   };
-  const editHandler = (id) => {
-    const foundTodo = todos.find((todo) => todo.id === id);
-    setEditTodo(foundTodo);
+  const editHandler = (id, editedTitle, editedDesc) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id
+        ? {
+            ...todo,
+            title: editedTitle,
+            desc: editedDesc,
+          }
+        : todo
+    );
+
+    setTodos(updatedTodos);
   };
   return (
     <div className="flex justify-between mx-auto  w-[750px] mt-40">
