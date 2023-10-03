@@ -5,6 +5,7 @@ import TodoList from "./Components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
+
   const removeHandler = (id) => {
     const removedList = todos.filter((todo) => todo.id != id);
     setTodos(removedList);
@@ -19,13 +20,20 @@ function App() {
 
     setTodos(updatedTodos);
   };
+  const editHandler = (id) => {
+    const foundTodo = todos.find((todo) => todo.id === id);
+    setEditTodo(foundTodo);
+  };
   return (
     <div className="flex justify-between mx-auto  w-[750px] mt-40">
       <InputForm setTodos={setTodos} todos={todos} />
+
       <TodoList
         todos={todos}
+        setTodos={setTodos}
         onRemove={removeHandler}
         onComplete={CommentHandler}
+        onEdit={editHandler}
       />
     </div>
   );

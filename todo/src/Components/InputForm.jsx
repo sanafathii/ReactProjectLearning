@@ -19,6 +19,7 @@ function InputForm({ setTodos, todos }) {
       title: task.title,
       desc: task.desc,
       completed: false,
+      isEditing: false,
     };
 
     setTodos([...todos, newTask]);
