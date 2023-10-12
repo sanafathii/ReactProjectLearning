@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/*  */
+
+:root {
+  --blue: #93c5fd;
+  --white: #fff;
+  --blue-bg: #f5f3ff;
+  --btn-color: #2563eb;
+  --border: #a3a3a3;
+  --bg-acount: #1e40af;
+  --bg-checkbox: #27ae60;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--blue);
+  /* position: relative; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10px;
+}
+
+.myDateInput::-moz-placeholder {
+  color: white;
+}
